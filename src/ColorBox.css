@@ -5,15 +5,15 @@
   display: inline-block;
   position: relative;
   cursor: pointer;
-  margin: -3.5px;
+  margin-bottom: -3.5px;
 }
-
 .SingleColorPalette .ColorBox {
   height: 50%;
 }
 
-.ColorBox.go-back {
+.go-back {
   background-color: black;
+  position: relative;
 }
 
 .copy-button,
@@ -40,7 +40,6 @@
 .copy-button {
   opacity: 0;
 }
-
 .ColorBox:hover .copy-button {
   opacity: 1;
   transition: 0.5s;
@@ -63,7 +62,6 @@
 .ColorBox .dark-text {
   color: rgba(0, 0, 0, 0.5);
 }
-
 .see-more {
   background: rgba(255, 255, 255, 0.3);
   position: absolute;
@@ -86,7 +84,6 @@
   transition: transform 0.6s ease-in-out;
   transform: scale(0.1);
 }
-
 .copy-overlay.show {
   opacity: 1;
   transform: scale(50);
@@ -113,7 +110,7 @@
 .copy-msg.show {
   opacity: 1;
   transform: scale(1);
-  z-index: 10;
+  z-index: 25;
   transition: all 0.4s ease-in-out;
   transition-delay: 0.3s;
 }
@@ -128,7 +125,6 @@
   padding: 1rem;
   text-transform: uppercase;
 }
-
 .copy-msg p {
   font-size: 2rem;
   font-weight: 100;
