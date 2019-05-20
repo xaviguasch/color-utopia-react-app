@@ -5,23 +5,18 @@ import PaletteFooter from './PaletteFooter'
 import './Palette.css'
 
 class Palette extends Component {
-  constructor(props, context) {
-    super(props, context)
-
+  constructor(props) {
+    super(props)
     this.state = { level: 500, format: 'hex' }
-
     this.changeLevel = this.changeLevel.bind(this)
     this.changeFormat = this.changeFormat.bind(this)
   }
-
   changeLevel(level) {
     this.setState({ level })
   }
-
   changeFormat(val) {
     this.setState({ format: val })
   }
-
   render() {
     const { colors, paletteName, emoji, id } = this.props.palette
     const { level, format } = this.state
@@ -31,7 +26,7 @@ class Palette extends Component {
         name={color.name}
         key={color.id}
         moreUrl={`/palette/${id}/${color.id}`}
-        showingFullPalette={true}
+        showingFullPalette
       />
     ))
     return (
@@ -40,7 +35,7 @@ class Palette extends Component {
           level={level}
           changeLevel={this.changeLevel}
           handleChange={this.changeFormat}
-          showingAllColors={true}
+          showingAllColors
         />
         <div className='Palette-colors'>{colorBoxes}</div>
         <PaletteFooter paletteName={paletteName} emoji={emoji} />
@@ -48,5 +43,4 @@ class Palette extends Component {
     )
   }
 }
-
 export default Palette
